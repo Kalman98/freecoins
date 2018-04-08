@@ -1,0 +1,16 @@
+[
+{
+  "modid": "freecoins",
+  "name": "Free Coins",
+  "description": "Allows you to stab people for free coins.",
+  "version": "1.0",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Kalman98"],
+  "credits": "Technoblade for the inspiration, CircuitLord for moral support",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
