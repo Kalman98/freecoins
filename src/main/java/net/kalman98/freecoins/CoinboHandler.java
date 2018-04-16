@@ -93,7 +93,7 @@ public class CoinboHandler
 	
 	public boolean isComboValid(long worldTime)
 	{
-		return this.getTimeSinceLastHit(worldTime) < 1.75; // a combo can be continued if the latest hit is within 1.75 seconds of the one before it
+		return this.getTimeSinceLastHit(worldTime) < 35; // a combo can be continued if the latest hit is within 1.75 seconds of the one before it
 	}
 	
 	public void worldChange()

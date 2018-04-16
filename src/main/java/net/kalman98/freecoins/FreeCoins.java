@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class FreeCoins
 {
     public static final String MODID = "freecoins";
-    public static final String VERSION = "1.1";
+    public static final String VERSION = "1.1b";
 
     public static final String GUIFACTORY = "net.kalman98.freecoins.config.FreeCoinsGuiFactory";
 	
