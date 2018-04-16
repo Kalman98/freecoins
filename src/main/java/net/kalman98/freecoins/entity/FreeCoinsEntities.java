@@ -43,4 +43,30 @@ public class FreeCoinsEntities
 	{
 		EntityRegistry.registerModEntity(entityClass, entityName, entityID++, FreeCoins.instance, trackingRange, updateFrequency, sendsVelocityUpdates);
 	}
+	
+	/**
+	 * Register an entity with the specified tracking values and spawn egg colours.
+	 *
+	 * @param entityClass
+	 *            The entity's class
+	 * @param entityName
+	 *            The entity's unique name
+	 * @param trackingRange
+	 *            The range at which MC will send tracking updates
+	 * @param updateFrequency
+	 *            The frequency of tracking updates
+	 * @param sendsVelocityUpdates
+	 *            Whether to send velocity information packets as well
+	 * @param eggPrimary
+	 *            The spawn egg's primary (background) colour
+	 * @param eggSecondary
+	 *            The spawn egg's secondary (foreground) colour
+	 */
+	@SuppressWarnings("unused")
+	private static void registerEntity(Class<? extends Entity> entityClass, String entityName, int trackingRange,
+			int updateFrequency, boolean sendsVelocityUpdates, int eggPrimary, int eggSecondary)
+	{
+		EntityRegistry.registerModEntity(entityClass, entityName, entityID++, FreeCoins.instance, trackingRange, updateFrequency, sendsVelocityUpdates);
+		EntityRegistry.registerEgg(entityClass, eggPrimary, eggSecondary);
+	}
 }

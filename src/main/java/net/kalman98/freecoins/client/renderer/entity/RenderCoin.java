@@ -26,7 +26,6 @@ public class RenderCoin extends Render<EntityCoin>
 		GlStateManager.pushMatrix();
 		
 		GlStateManager.translate((float) x, (float) y, (float) z);
-		//GlStateManager.rotate(90.0f - rotationYaw, 0.0F, 1.0F, 0.0F);
 		
 		if (!bindEntityTexture(entitycoin)) {
 			return;

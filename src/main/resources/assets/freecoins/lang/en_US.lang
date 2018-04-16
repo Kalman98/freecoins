@@ -1,0 +1,9 @@
+gui.freecoins.config.mainTitle=Free Coins! Coinfiguration
+gui.freecoins.config.ctgy.general=General
+gui.freecoins.config.ctgy.ui=UI
+gui.freecoins.minimalCoins=Minimal Coins
+gui.freecoins.uiX=UI X Coordinate
+gui.freecoins.uiY=UI Y Coordinate
+gui.freecoins.showUi=Show UI
+gui.freecoins.simpleUi=Simplified UI
+gui.freecoins.showUiText=Show UI Text
