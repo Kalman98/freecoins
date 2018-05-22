@@ -19,7 +19,7 @@ public class FreeCoinsHud
     @SubscribeEvent
     public void RenderGameOverlayEvent(RenderGameOverlayEvent event)
     {
-    	if (!FreeCoinsConfiguration.showUI)
+    	if (!FreeCoinsConfiguration.showUI || FreeCoinsConfiguration.disableMod)
     		return;
     	// we *MUST* save OpenGL's current blend state here and
     	// remember to set it back to this later. Thanks

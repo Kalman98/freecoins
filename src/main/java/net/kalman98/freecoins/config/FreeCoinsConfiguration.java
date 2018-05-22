@@ -45,6 +45,7 @@ public class FreeCoinsConfiguration
 	public static boolean showUI;
 	public static boolean simpleUI;
 	public static boolean showUiText;
+	public static boolean disableMod;
 	
 	public static final String CATEGORY_NAME_GENERAL = "category_general";
 	public static final String CATEGORY_NAME_UI = "category_ui";
@@ -162,12 +163,18 @@ public class FreeCoinsConfiguration
 		// will be assigned the default value.
 
 		// ---- GENERAL CONFIGURATION ----
+		final boolean DISABLE_MOD_DEFAULT = false;
+	    Property propDisableMod = config.get(CATEGORY_NAME_GENERAL, "disableMod", DISABLE_MOD_DEFAULT);
+	    propDisableMod.comment = "Disable the mod, which turns off both coin spawning and the UI.";
+	    propDisableMod.setLanguageKey("gui.freecoins.disableMod");
+		
 		final boolean MINIMAL_COINS_DEFAULT = false;
 	    Property propMinimalCoins = config.get(CATEGORY_NAME_GENERAL, "minimalCoins", MINIMAL_COINS_DEFAULT);
 	    propMinimalCoins.comment = "Only render 1 coin per hit, regardless of multiplayer. Can help with lag.";
 	    propMinimalCoins.setLanguageKey("gui.freecoins.minimalCoins");
 	    
 		List<String> propOrderUI = new ArrayList<String>();
+		propOrderUI.add(propDisableMod.getName());
 		propOrderUI.add(propMinimalCoins.getName());
 		config.setCategoryPropertyOrder(CATEGORY_NAME_GENERAL, propOrderUI);
 	    
@@ -225,6 +232,7 @@ public class FreeCoinsConfiguration
 
 		if (readFieldsFromConfig)
 		{
+			disableMod = propDisableMod.getBoolean(DISABLE_MOD_DEFAULT);
 			minimalCoins = propMinimalCoins.getBoolean(MINIMAL_COINS_DEFAULT);
 			showUI = propShowUi.getBoolean(SHOW_UI_DEFAULT);
 			simpleUI = propSimpleUi.getBoolean(SIMPLE_UI_DEFAULT);
@@ -251,6 +259,7 @@ public class FreeCoinsConfiguration
 		// This is done even for a loadFromFile==true, because some of the properties
 		// may have been assigned default
 		// values if the file was empty or corrupt.
+		propDisableMod.set(disableMod);
 		propMinimalCoins.set(minimalCoins);
 		propShowUi.set(showUI);
 		propSimpleUi.set(simpleUI);

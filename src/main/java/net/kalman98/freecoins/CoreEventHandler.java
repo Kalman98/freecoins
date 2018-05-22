@@ -32,7 +32,7 @@ public class CoreEventHandler
 	{
 		World world = e.entityPlayer.getEntityWorld();
 		Random rand = new Random();
-		if (!world.isRemote)
+		if (!world.isRemote || FreeCoinsConfiguration.disableMod)
 			return;
 		Item[] stabbyWeapons = { Items.wooden_sword, Items.stone_sword, Items.golden_sword, Items.iron_sword,
 				Items.diamond_sword };
