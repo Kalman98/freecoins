@@ -21,6 +21,13 @@ public class FreeCoinsHud
     {
     	if (!FreeCoinsConfiguration.showUI)
     		return;
+    	// we *MUST* save OpenGL's current blend state here and
+    	// remember to set it back to this later. Thanks
+    	// StackOverflow :) https://stackoverflow.com/a/18022495
+    	boolean blendEnabled = GL11.glGetBoolean(GL11.GL_BLEND);
+    	int blendSrc = GL11.glGetInteger(GL11.GL_BLEND_SRC);
+    	int blendDst = GL11.glGetInteger(GL11.GL_BLEND_DST);
+    	
         GL11.glPushMatrix();
         GL11.glDisable(GL11.GL_LIGHTING);
         GL11.glScalef(0.1875F, 0.1875F, 1.0F);
@@ -102,5 +109,16 @@ public class FreeCoinsHud
         
         GL11.glPopMatrix();
         mc.getTextureManager().bindTexture(Gui.icons);
+        
+        // set the blend state back to how it was before - fixes
+        // the scoreboard transparency issue
+        if (blendEnabled) {
+            GL11.glEnable(GL11.GL_BLEND);
+        }
+        else {
+            GL11.glDisable(GL11.GL_BLEND);
+        }
+
+        GL11.glBlendFunc(blendSrc, blendDst);
     }
 }
