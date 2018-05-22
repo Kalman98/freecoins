@@ -3,7 +3,7 @@
   "modid": "freecoins",
   "name": "Free Coins",
   "description": "Allows you to stab people for free coins.",
-  "version": "1.1b",
+  "version": "1.2",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
